@@ -6,7 +6,7 @@ import './Login.css';
 const Login = () => {
   return (
     <div className="login-page-body">
-      {/* NAV */}
+ 
       <header>
         <div className="logo"><span></span>VISIONPLUS</div>
         <nav>
@@ -23,7 +23,7 @@ const Login = () => {
         </div>
       </header>
 
-      {/* HERO */}
+
       <section className="hero">
         <div className="hero-bg"></div>
         <div className="hero-content">
@@ -36,7 +36,6 @@ const Login = () => {
         </div>
       </section>
 
-      {/* TENDENCIAS */}
       <section className="section">
         <h2>Tendencias...</h2>
         <div className="movie-list">
