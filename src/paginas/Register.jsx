@@ -8,7 +8,6 @@ const Register = ({ onRegisterSuccess }) => {
     e.preventDefault();
     alert("¡Cuenta creada con éxito! Serás redirigido a la página principal.");
     
-    // 🔑 Llama a la función de navegación
     if (onRegisterSuccess) {
       onRegisterSuccess(); 
     }
