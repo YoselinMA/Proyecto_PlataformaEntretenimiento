@@ -1,0 +1,288 @@
+/* src/paginas/Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap');
+
+/* Variables CSS */
+:root{
+  --bg: #0e1117;
+  --panel:#141925;
+  --panel-2:#1a2030;
+  --purple:#9d4edd;
+  --purple-2:#7b2cbf;
+  --glow:#c77dff;
+  --highlight: #c77dff;
+  --text:#e8eaf0;
+  --muted:#aeb3c2;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;}
+
+
+.login-page-body{
+  font-family:"Nunito Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  min-height: 100vh;
+  font-size: 0.9em; 
+  background:
+    radial-gradient(1200px 500px at 60% -10%, rgba(199,125,255,.16), transparent 60%),
+    radial-gradient(800px 380px at -10% 120%, rgba(123,44,191,.12), transparent 60%),
+    var(--bg);
+}
+
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  /* ✨ AJUSTE CLAVE: Reducimos el padding del header para hacerlo más delgado */
+  padding:1px 20px; 
+  background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0)) , var(--panel);
+  border-bottom:1px solid rgba(199,125,255,.22);
+  box-shadow:0 0 20px rgba(157,78,221,.15);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.logo{
+  font-weight:800;
+  font-size:1.4em; 
+  color:var(--glow);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo span{
+  width:26px;height:26px;border-radius:8px;
+  background:linear-gradient(135deg,var(--purple),var(--purple-2));
+  box-shadow:0 0 10px var(--glow);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px; /* Menor separación */
+  margin-left:30px; /* Ajuste margen */
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:1.05rem;
+  padding:6px 12px;
+  border-radius:8px;
+  transition: all 0.2s ease;
+  cursor:pointer;
+
+}
+
+nav a:hover{
+  background: rgba(199,125,255,0.05);
+  outline: 2px solid var(--highlight);
+}
+
+nav a.active{
+  background: rgba(199,125,255,0.15);
+  outline: 2px solid var(--highlight);
+}
+
+.search{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:var(--panel-2);
+  border:1px solid rgba(199,125,255,.25);
+  border-radius:999px;
+  padding:6px 10px;
+  box-shadow:0 0 10px rgba(157,78,221,.14) inset;
+  transition: all 0.2s ease;
+  cursor:pointer;
+  margin:0 auto;
+}
+
+.search:hover{
+  background: rgba(199,125,255,0.05);
+}
+
+.search input{ 
+  background:transparent;border:none;outline:none;color:var(--text); 
+  font-size:1rem; 
+}
+
+.search button{
+  border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;
+  background:linear-gradient(135deg,var(--purple),var(--purple-2));
+  box-shadow:0 0 10px var(--glow);
+  color:white;
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.right div{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 12px;
+  border-radius:8px;
+  transition: all 0.2s ease;
+  cursor:pointer;
+}
+
+.right div:hover{
+  background: rgba(199,125,255,0.15);
+  outline: 2px solid var(--highlight);
+}
+
+.right div.active{
+  background: rgba(199,125,255,0.15);
+  outline: 2px solid var(--highlight);
+}
+
+/* ===== HERO (AJUSTADO) ===== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  /* ✨ AJUSTE CLAVE: Reducimos la altura del Hero */
+  height:480px; 
+  display:flex;
+  align-items:flex-end;
+  border-bottom:1px solid rgba(199,125,255,.16);
+}
+
+.hero-bg{
+  position:absolute; inset:0;
+  /* Ruta absoluta para mayor fiabilidad en React (asumiendo 13.jpg en /public) */
+  background:center/cover no-repeat url('/13.jpg'); 
+  filter:saturate(1) brightness(.9);
+}
+
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.7));
+}
+
+.hero-content{
+  position:relative;
+  /* ✨ AJUSTE CLAVE: Reducimos padding horizontal */
+  padding:24px 48px; 
+  z-index:2;
+  max-width:700px;
+}
+
+.hero h1{
+  /* Usamos clamp para mantener responsividad pero ajustamos los valores máximos y mínimos */
+  font-size: clamp(38px, 5vw, 50px); 
+  margin:6px 0;
+  color:white;
+  text-shadow:0 0 14px rgba(199,125,255,.5);
+}
+
+.hero p{
+  margin:0 0 18px;
+  color:#d9dbe4;
+  font-size:1.1rem; /* Ajuste para el nuevo font-size base */
+}
+
+.buttons{
+  display:flex;gap:12px;flex-wrap:wrap;
+}
+
+.btn{
+ appearance:none; border:none; cursor:pointer; font-weight:800; padding:.85rem 1.2rem; border-radius:2px; transition:.2s ease;
+}
+
+.btn-primary{
+  color:white;
+  background:linear-gradient(90deg,var(--purple),var(--purple-2));
+  box-shadow:0 0 10px var(--glow), 0 0 22px var(--purple);
+}
+
+.btn-secondary{
+  color:var(--text);
+  background:transparent;
+  border:1px solid rgba(199,125,255,.35);
+}
+
+.btn:hover{ filter:brightness(1.1); }
+
+
+.section{
+  padding:40px 60px;
+}
+
+.section h2{
+  margin-bottom:20px;
+  color:var(--text);
+  font-size:1.5rem;
+}
+
+.movie-list{
+  display:flex;
+  gap:40px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
+}
+
+.movie{
+  scroll-snap-align:start;
+  background:var(--panel-2);
+  border:1px solid rgba(199,125,255,.14);
+  border-radius:12px;
+  
+  /* Mantemos el tamaño para el scroll */
+  min-width: 140px; 
+  width: 180px; /* Asegura un ancho fijo para las películas */
+  
+  overflow:hidden;
+  position:relative;
+  transition:transform .3s ease;
+  padding:4px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.movie img{
+  width:100%;
+  height:240px; 
+  object-fit:cover;
+  display:block;
+  filter:brightness(.9);
+  border-radius:8px;
+}
+
+.movie:hover{ transform:scale(1.06); }
+
+.movie::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;height:6px;
+  background:linear-gradient(90deg,transparent,var(--glow),var(--purple-2),transparent);
+  filter:drop-shadow(0 0 8px var(--glow));
+  opacity:.8;
+}
+
+.movie-title{
+  margin-top:6px;
+  text-align:center;
+  font-weight:600;
+  color:var(--text);
+  font-size:1rem; /* Ajuste para el nuevo font-size base */
+  transition: all 0.2s ease;
+}
+
+.movie:hover .movie-title{
+  color:var(--glow);
+  text-shadow:0 0 6px var(--glow);
+}
+

@@ -1,0 +1,10 @@
+// src/main.jsx
+import React from "react"; // <--- ¡Esta línea faltaba!
+import ReactDOM from "react-dom/client";
+import App from "./paginas/App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
